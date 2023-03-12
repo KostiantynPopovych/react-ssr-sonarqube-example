@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "Starter for Next.js 13+, TypeScript, Jest, Cypress, with SonarQube",
   "author": "Kostiantyn Popovych <kostiantyn.popovych.exp@gmail.com> (https://github.com/KostiantynPopovych)",
-  "license": "MIT",
   "repository": "github:KostiantynPopovych/react-ssr-sonarqube-example",
   "keywords": [
     "boilerplate",
@@ -30,6 +29,7 @@
     "tests:e2e-headless": "start-server-and-test dev http://localhost:3000 cypress:headless",
     "pretests:e2e:headless:coverage": "rimraf .next coverage/cypress .nyc_output",
     "tests:e2e:headless:coverage": "cross-env CYPRESS_COVERAGE=true start-server-and-test dev:instrument http://localhost:3000 cypress:headless",
+    "test:both:coverage": "npm run tests:unit:coverage && npm run tests:e2e:headless:coverage",
     "update-sonar-project": "./update-sonar-project.sh"
   },
   "dependencies": {
