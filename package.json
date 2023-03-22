@@ -30,7 +30,8 @@
     "pretests:e2e:headless:coverage": "rimraf .next coverage/cypress .nyc_output",
     "tests:e2e:headless:coverage": "cross-env CYPRESS_COVERAGE=true start-server-and-test dev:instrument http://localhost:3000 cypress:headless",
     "test:both:coverage": "npm run tests:unit:coverage && npm run tests:e2e:headless:coverage",
-    "update-sonar-project": "./update-sonar-project.sh"
+    "generate-merged-report": "node scripts/generate-merged-report.js",
+    "update-sonar-project": "node scripts/sonar-analysis.js"
   },
   "dependencies": {
     "next": "^13.1.1",
@@ -39,6 +40,7 @@
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.0",
+    "@lcov-viewer/istanbul-report": "^1.3.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.2.0",
     "@types/jest": "^29.2.5",
@@ -46,11 +48,13 @@
     "cross-env": "^7.0.3",
     "cypress": "^12.3.0",
     "cypress-sonarqube-reporter": "^1.12.0",
+    "dotenv": "^16.0.3",
+    "fancy-log": "^2.0.0",
     "jest": "28.1.0",
     "jest-environment-jsdom": "^29.3.1",
     "jest-sonar": "^0.2.15",
     "rimraf": "^3.0.2",
-    "sonarqube-verify": "^1.0.2",
+    "sonarqube-scanner": "^3.0.1",
     "start-server-and-test": "^1.15.2",
     "swc-plugin-coverage-instrument": "^0.0.14",
     "typescript": "4.6.4"

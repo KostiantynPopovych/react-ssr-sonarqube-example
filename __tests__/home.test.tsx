@@ -36,23 +36,23 @@ describe('Home', () => {
   * Uncomment this test to see that the coverage report will show
   * no untested paths, the test output is merged correctly and the coverage is 100%.
   */
-  // it('should test untested path', async () => {
-  //   render(<Home />)
-  //
-  //   const input = screen.getByTestId('testing-input')
-  //   const button = screen.getByTestId('testing-button')
-  //   const p = screen.getByTestId('testing-p')
-  //
-  //   fireEvent.change(input,  { target: { value: 'something' } })
-  //   fireEvent.click(button)
-  //
-  //   await waitFor(() => {
-  //     expect(p).toHaveTextContent(/not tested/i);
-  //   });
-  // })
-})
+  it('should test untested path', async () => {
+    render(<Home />)
 
-it('renders homepage unchanged', () => {
-  const { container } = render(<Home />)
-  expect(container).toMatchSnapshot()
+    const input = screen.getByTestId('testing-input')
+    const button = screen.getByTestId('testing-button')
+    const p = screen.getByTestId('testing-p')
+
+    fireEvent.change(input,  { target: { value: 'something' } })
+    fireEvent.click(button)
+
+    await waitFor(() => {
+      expect(p).toHaveTextContent(/not tested/i);
+    });
+  })
+
+  it('renders homepage unchanged', () => {
+    const { container } = render(<Home />)
+    expect(container).toMatchSnapshot()
+  })
 })

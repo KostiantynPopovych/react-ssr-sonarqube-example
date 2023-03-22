@@ -1,3 +1,4 @@
 {
-  "report-dir": "coverage/cypress"
+  "report-dir": "./coverage/cypress",
+  "cache": false
 }

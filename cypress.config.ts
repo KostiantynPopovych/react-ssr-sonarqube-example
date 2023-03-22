@@ -24,13 +24,13 @@ export default defineConfig({
 	e2e: {
 		baseUrl,
 		setupNodeEvents(on, config) {
-			if (collectCoverage) {
-				require('@cypress/code-coverage/task')(on, config);
+      if (collectCoverage) {
+        require('@cypress/code-coverage/task')(on, config);
 
-				on('after:run', (results) => {
-					return require('cypress-sonarqube-reporter/mergeReports')(results);
-				});
-			}
+        on('after:run', (results) => {
+          return require('cypress-sonarqube-reporter/mergeReports')(results);
+        });
+      }
 			return config;
 		}
 	}

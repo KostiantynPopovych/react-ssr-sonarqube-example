@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styles from '@/styles/shared.module.css'
-import {FormEventHandler, useRef, useState} from "react";
+import { FormEventHandler, useRef, useState } from "react";
 
 export default function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
