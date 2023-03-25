@@ -18,8 +18,7 @@ const customJestConfig = {
   coverageDirectory: "coverage/jest",
   reporters: ['default', ['jest-sonar', {
     outputDirectory: 'coverage/jest',
-    outputName: 'sonarqube-report.xml',
-    reportedFilePath: 'absolute'
+    outputName: 'sonarqube-report.xml'
   }]]
 }
 

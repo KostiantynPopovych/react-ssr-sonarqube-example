@@ -10,7 +10,6 @@ export default defineConfig({
 		reporterOptions: {
 			overwrite: true,
 			outputDir: 'coverage/cypress/reports',
-			useAbsoluteSpecPath: true,
 			preserveSpecsDir: false,
 			mergeOutputDir: 'coverage/cypress',
 			mergeFileName: 'sonarqube-report.xml'
