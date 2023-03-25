@@ -1,21 +1,21 @@
-import Link from 'next/link'
-import styles from '@/styles/shared.module.css'
+import Link from "next/link";
+import styles from "@/styles/shared.module.css";
 import { FormEventHandler, useRef, useState } from "react";
 
 export default function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [testedFrom, setTestedFrom] = useState('');
+  const [testedFrom, setTestedFrom] = useState("");
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (ev) => {
     ev.preventDefault();
-    if (inputRef.current!.value === 'from-jest') {
-      setTestedFrom('Tested by jest');
-    } else if (inputRef.current!.value === 'from-cypress') {
-      setTestedFrom('Tested by cypress');
+    if (inputRef.current!.value === "from-jest") {
+      setTestedFrom("Tested by jest");
+    } else if (inputRef.current!.value === "from-cypress") {
+      setTestedFrom("Tested by cypress");
     } else {
-      setTestedFrom('Not tested');
+      setTestedFrom("Not tested");
     }
-  }
+  };
 
   return (
     <div className={styles.container}>
@@ -31,5 +31,5 @@ export default function Home() {
         </p>
       </main>
     </div>
-  )
+  );
 }

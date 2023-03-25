@@ -1,18 +1,16 @@
 /** @type {import('next').NextConfig} */
 
-const instrumentTheCode = 'INSTRUMENT_CODE' in process.env;
+const instrumentTheCode = "INSTRUMENT_CODE" in process.env;
 
 const nextConfig = {
   reactStrictMode: true,
-  ...(instrumentTheCode ? {
-    experimental: {
-      swcPlugins: [
-        [
-          "swc-plugin-coverage-instrument", {}
-        ]
-      ]
-    }
-  } : {})
-}
+  ...(instrumentTheCode
+    ? {
+        experimental: {
+          swcPlugins: [["swc-plugin-coverage-instrument", {}]],
+        },
+      }
+    : {}),
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
